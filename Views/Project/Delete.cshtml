@@ -1,0 +1,40 @@
+﻿@model SuciuBogdan_7946.Models.Project
+
+
+@{
+    ViewData["Title"] = "Editeaza Proiect";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Panou Control</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Project" asp-action="Index">Proiecte</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Sterge Proiect</li>
+    </ol>
+</nav>
+
+<div class="row ">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 col-sm-12">
+    
+        <div class="alert alert-danger mt-2 mb-2" role="alert">
+           Vrei sa stergi @Model.Name ?
+        </div>
+
+ 
+
+        <div class="card text-white mb-3">
+            <div class="card-header text-center bg-dark">Sterge Proiect</div>
+            <div class="card-body text-center">
+                <form method="post" asp-action="DeleteProject">
+                    <input asp-for="Id" type="hidden" />
+                    <input type="text" class="form-control" asp-for="Name" disabled />
+                    <input type="submit" class="btn btn-block btn-danger mt-2" value="Sterge" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+

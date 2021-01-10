@@ -1,0 +1,37 @@
+﻿@model IEnumerable<SuciuBogdan_7946.Models.Project>
+@{
+    ViewData["Title"] = "Panou Control";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Panou Control</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="col-lg-3 col-sm-12">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header text-center"><h5>Proiecte</h5></div>
+            <div class="card-body text-center">
+                <h4 class="card-title">@Model.Count()</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+        <div class="card text-white bg-danger mb-3">
+            <div class="card-header text-center"><h5>Teste</h5></div>
+            <div class="card-body text-center">
+                <h4 class="card-title">0</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-header text-center"><h5>Elemente</h5></div>
+            <div class="card-body text-center">
+                <h4 class="card-title">0</h4>
+            </div>
+        </div>
+    </div>
+</div>
