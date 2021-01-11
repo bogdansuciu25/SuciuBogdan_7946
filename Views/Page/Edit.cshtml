@@ -1,0 +1,36 @@
+﻿@model SuciuBogdan_7946.Models.Pages
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Panou Control</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Page" asp-action="Index">Pagini</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Editeaza Pagina</li>
+    </ol>
+</nav>
+
+<div class="row ">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 col-sm-12">
+
+        <div class="card text-white mb-3">
+            <div class="card-header text-center bg-primary">Editeaza Pagina</div>
+            <div class="card-body text-center">
+                <form method="post" asp-action="Edit">
+                    <input class="form-control" type="text" asp-for="Name" />
+                    <input type="hidden" asp-for="Id" />
+                    <select class="form-control mt-2" asp-for="ProjectId" asp-items="ViewBag.Projects">
+                        <option value="">Alege Proiectul</option>
+                    </select>
+                    <input type="submit" class="btn btn-block btn-outline-dark mt-2" value="Salveaza" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+
+

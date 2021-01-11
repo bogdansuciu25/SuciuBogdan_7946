@@ -1,0 +1,61 @@
+﻿@model SuciuBogdan_7946.Models.DomElement
+@{
+    ViewData["Title"] = "Create";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Panou Control</a></li>
+        <li class="breadcrumb-item">
+            <a asp-controller="DomElement" asp-action="Index">Alege Proiect</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a asp-controller="DomElement" asp-action="Index" asp-route-projectId="@ViewBag.projectId">Proiect: @ViewBag.projectName</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a asp-controller="DomElement"
+               asp-action="Index"
+               asp-route-projectId="@ViewBag.projectId"
+               asp-route-pageId="@ViewBag.pageId">Pagina: @ViewBag.pageName</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Adauga Element</li>
+    </ol>
+</nav>
+
+<div class="row ">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 col-sm-12">
+
+        <div class="card text-white mb-3">
+            <div class="card-header text-center bg-success">Adauga Element @ViewBag.projectName > @ViewBag.pageName</div>
+            <div class="card-body text-center">
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger mt-2 mb-2" role="alert">
+                        @TempData["ErrorMessage"]
+                    </div>
+
+                }
+
+            <form method="post" asp-action="Create">
+                <input type="hidden" name="pageId" value="@ViewBag.pageId" />
+                <input type="hidden" name="projectId" value="@ViewBag.projectId" />
+                <input type="text" class="form-control" asp-for="Name" placeholder="Nume Element" />
+                <input type="hidden" asp-for="PageId" value="@ViewBag.pageId" />
+                <select class="form-control mt-2" asp-for="IdentifiedBy">
+                    <option value="xpath">xpath</option>
+                    <option value="id">id</option>
+                    <option value="name">name</option>
+                </select>
+                <input type="text" class="form-control mt-2" asp-for="LocatorValue" placeholder="Valoare Identificator" />
+                <input type="submit" class="btn btn-block btn-outline-dark mt-2" value="Adauga" />
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+
+
+

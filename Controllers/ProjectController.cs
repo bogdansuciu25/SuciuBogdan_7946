@@ -22,12 +22,14 @@ namespace SuciuBogdan_7946.Controllers
 
         }
 
+       
         public IActionResult Create()
         {
             Models.Project objProject = new Models.Project();
             objProject.Name = "";
             return View(objProject);
         }
+
 
         public IActionResult Edit(int? id)
         {

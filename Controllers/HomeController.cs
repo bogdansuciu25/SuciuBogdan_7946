@@ -22,8 +22,11 @@ namespace SuciuBogdan_7946.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Models.Project> objList = _db.Project;
-            return View(objList);
+            ViewBag.projectsCount   = _db.Project.Count();
+            ViewBag.pagesCount      = _db.Pages.Count();
+            ViewBag.elementsCount   = _db.DomElement.Count();
+
+            return View();
         }
 
         public IActionResult Privacy()

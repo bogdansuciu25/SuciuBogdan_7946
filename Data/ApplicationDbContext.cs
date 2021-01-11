@@ -16,5 +16,7 @@ namespace SuciuBogdan_7946.Data
 
         public DbSet<Models.Project> Project { get; set; }
         public DbSet<Models.Pages> Pages { get; set; }
+        public DbSet<Models.DomElement> DomElement { get; set; }
+
     }
 }

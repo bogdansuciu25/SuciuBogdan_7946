@@ -1,0 +1,54 @@
+﻿@model SuciuBogdan_7946.Models.DomElement
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Panou Control</a></li>
+        <li class="breadcrumb-item">
+            <a asp-controller="DomElement"
+               asp-action="Index"
+               asp-route-projectId="@ViewBag.projectId"
+               asp-route-pageId="@ViewBag.pageId">Elemente</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Editeaza Element</li>
+    </ol>
+</nav>
+
+<div class="row ">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 col-sm-12">
+
+        <div class="card text-white mb-3">
+            <div class="card-header text-center bg-primary">Editeaza Element</div>
+            <div class="card-body text-center">
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger mt-2 mb-2" role="alert">
+                        @TempData["ErrorMessage"]
+                    </div>
+
+                }
+
+            <form method="post" asp-action="Edit">
+                <label class="form-text text-dark text-left" asp-for="Name"></label>
+                <input type="text" class="form-control" asp-for="Name" />
+                <label class="form-text text-dark text-left" asp-for="IdentifiedBy"></label>
+                <select class="form-control mt-2" asp-for="IdentifiedBy">
+                    <option value="xpath">xpath</option>
+                    <option value="id">id</option>
+                    <option value="name">name</option>
+                </select>
+                <label class="form-text text-dark text-left" asp-for="LocatorValue"></label>
+                <input type="text" class="form-control" asp-for="LocatorValue" />
+                <input type="hidden" asp-for="PageId" />
+                <input type="hidden" name="pageId" value="@ViewBag.pageId" />
+                <input type="hidden" name="projectId" value="@ViewBag.projectId" />
+                <input type="submit" class="btn btn-block btn-outline-dark mt-2" value="Salveaza" />
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SuciuBogdan_7946.Models.Project>
+﻿
 @{
     ViewData["Title"] = "Panou Control";
 }
@@ -14,15 +14,15 @@
         <div class="card text-white bg-success mb-3">
             <div class="card-header text-center"><h5>Proiecte</h5></div>
             <div class="card-body text-center">
-                <h4 class="card-title">@Model.Count()</h4>
+                <h4 class="card-title">@ViewBag.projectsCount</h4>
             </div>
         </div>
     </div>
     <div class="col-lg-3 col-sm-12">
         <div class="card text-white bg-danger mb-3">
-            <div class="card-header text-center"><h5>Teste</h5></div>
+            <div class="card-header text-center"><h5>Pagini</h5></div>
             <div class="card-body text-center">
-                <h4 class="card-title">0</h4>
+                <h4 class="card-title">@ViewBag.pagesCount</h4>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="card text-white bg-info mb-3">
             <div class="card-header text-center"><h5>Elemente</h5></div>
             <div class="card-body text-center">
-                <h4 class="card-title">0</h4>
+                <h4 class="card-title">@ViewBag.elementsCount</h4>
             </div>
         </div>
     </div>
